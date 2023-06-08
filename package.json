@@ -1,0 +1,26 @@
+{
+  "name": "scroll-sections",
+  "version": "1.0.0",
+  "description": "Hossein Moosavi PhD",
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drhmoosavi"
+  },
+  "keywords": [
+    "Cancer",
+    "Genomics",
+    "Colorectal",
+    "PhD",
+    "Hossein Moosavi",
+    "Norway",
+    "Translational"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
