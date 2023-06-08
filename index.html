@@ -202,6 +202,18 @@
         #menuToggle input:checked~ul {
             transform: none;
         }
+        
+        #section1 {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+#section1.active {
+  display: block;
+  opacity: 1;
+}
+
     </style>
 </head>
 
@@ -250,7 +262,7 @@
         <span></span>
         <span></span>
         <ul id="menu">
-            <li><a href="#section1">Home</a></li>
+            <li><a href="#section1">back to the very beginning </a></li>
             <!-- Updated href to section1 -->
             <li><a href="#section3">About</a></li>
             <!-- Updated href to section3 -->
@@ -260,9 +272,26 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        /* Add JavaScript here. */
+    $(document).ready(function(){
+      // Show section 1 initially
+      $('#section1').addClass('active');
+    
+      // Hide the arrow link when in section 2
+      $('a[href="#section2"]').click(function(){
+        $('#arrow-link').hide();
+        $('#section1').removeClass('active');
+        setTimeout(function() {
+          $('#section2').addClass('active');
+        }, 1000);
+      });
+    });
     </script>
+
+      <a href="#section2" id="arrow-link">
+        <i class="fa-solid fa-arrow-down-to-line fa-beat fa-2xl" style="color: #51aae1;"></i>
+    </a>
 </body>
 
 </html>
