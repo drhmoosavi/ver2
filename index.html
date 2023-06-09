@@ -262,14 +262,12 @@
         #menuToggle input:checked~span:nth-last-child(2) {
             transform: rotate(-40deg) translate(0, 0);
         }
-
-        #music {
+#music {
     position: fixed;
     top: 0;
     left: 0;
     z-index: -1; /* Ensure the music content is behind the sections */
 }
-
 body {
     margin: 0;
     padding: 0;
@@ -279,25 +277,29 @@ body {
 </head>
 
 <body class="body">
-  <object id="music" data="music.html" width="100%" height="100%"></object>
 
-<section id="section1">
-    <object data="section1.html" width="100%" height="100%"></object>
+  <object id="music" data="music.html" width="100%"; height:100vh;"></object>
+
+  <section id="section1">
+    <!-- This accesses the content of section1.html -->
+    <object data="section1.html" style="width:100%; height:100vh;"></object>
 </section>
 
 <section id="section2">
-    <object data="section2.html" width="100%" height="100%"></object>
+    <!-- This accesses the content of section2.html -->
+    <object data="section2.html" style="width:100%; height:100vh;"></object>
 </section>
 
 <section id="section3">
     <!-- This accesses the content of section3.html -->
-    <object data="section3.html" width="100%" height:100vh></object>
+    <object data="section3.html" style="width:100%; height:100vh;"></object>
 </section>
 
 <section id="section4">
     <!-- This accesses the content of section4.html -->
-    <object data="section4.html" width="100%" height:100vh></object>
+    <object data="section4.html" style="width:100%; height:100vh;"></object>
 </section>
+
 
 
     <!-- Social Media Box -->
