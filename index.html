@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scroll Sections</title>
-
+    <title>Hossein Moosavi PhD Website</title>
+    <link href="https://fonts.cdnfonts.com/css/reforma-1918" rel="stylesheet">
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css">
-
     <!-- Academicons CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css">
 
     <style>
-      body {
+      .body {
           margin: 0;
           padding: 0;
           overflow: hidden;
@@ -25,13 +24,12 @@
           height: 100vh;
       }
 
-      section {
+      .section {
           height: 100vh;
           width: 100%;
       }
 
       /* Social Media Box */
-
       #footer {
           min-height: 20vh;
           width: 90%;
@@ -61,10 +59,10 @@
           transform: translateY(-50%);
           z-index: 100;
           background: black;
-          box-shadow: 1px 1px 2px #fcb823;
+          box-shadow: 2px 0px 6px #fcb823;
           padding: 0.2rem;
           /* Adjust the padding as desired */
-          border-radius: 8px;
+          border-radius: 10px;
       }
 
       .logo-img a {
@@ -106,106 +104,169 @@
           opacity: 1;
       }
 
-      /* Navigation Button */
+        /* Navigation Button */
+        @property --rotate {
+            syntax: "<angle>";
+            initial-value: 160deg;
+            inherits: false;
+        }
 
-      #menu {
-          position: absolute;
-          width: 200px;
-          list-style-type: none;
-          -webkit-font-smoothing: antialiased;
-          transition: transform 0.7s cubic-bezier(0.6, 0.1, 0.05, 1.0);
-          transform-origin: top left;
-          transform: translate(-75%, -90%);
-          /* Updated translation */
-      }
+        :root {
+            --card-height: 40vh;
+            --card-width: 40vw;
+        }
 
-      #menu li {
-          padding: 2px;
-          font-size: 18px;
-          font-weight: 600;
-          font-style: italic;
-          color: transparent;
-          font-family: 'Reforma 1918', sans-serif;
-      }
+        @keyframes spin {
+            0% {
+                --rotate: 0deg;
+            }
+            100% {
+                --rotate: 360deg;
+            }
+        }
 
-      #menuToggle {
-          display: block;
-          position: fixed;
-          top: 10px;
-          left: 10px;
-          z-index: 1;
-          -webkit-user-select: none;
-          user-select: none;
-      }
+        .card {
+    padding: 12px;
+    padding-top: 0px;
+    padding-bottom: 2px;
+    width: 30vw;
+    height: 15vh;
+    position: relative;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: 820;
+    font-style: italic;
+    font-family: 'Reforma 1918', sans-serif;
+    background: rgba(77, 73, 73, 0.15);
+    transform-origin: top left;
+    letter-spacing: 0.25px;
+    transform: translate(-80%, -100%);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.85s ease-in;
+    box-shadow: 7px 7px 15px #11152b;
+    border-radius: 11px;
+    z-index: 7;
+}
 
-      #menuToggle a {
-          text-decoration: none;
-          color: #fefdfd;
-          transition: color 0.25s ease;
-      }
+        #menu {
+            list-style-type: none;
+            /* Removes the default bullets */
+            padding: 0;
+        }
 
-      #menuToggle a:hover {
-          color: #9e1616;
-      }
+        #menu li::before {
+            content: "\007B";
+            /* Bullet symbol. */
+            color: white;
+            /* Bullet color */
+            font-size: 27px;
+            /* Bullet size */
+            font-weight: 520;
+            padding-right: 15px;
+            /* Space between bullet and text */
+            font-family: 'New Year Page', sans-serif;
+            font-style: bold;
+        }
 
-      #menuToggle input {
-          display: block;
-          width: 35px;
-          height: 32px;
-          position: absolute;
-          cursor: pointer;
-          opacity: 0;
-          /* hide this */
-          z-index: 2;
-          /* and place it over the hamburger */
-          -webkit-touch-callout: none;
-      }
+        #menuToggle {
+            display: block;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 2;
+            -webkit-user-select: none;
+            user-select: none;
+        }
 
-      #menuToggle span {
-          display: block;
-          width: 35px;
-          height: 4px;
-          margin-bottom: 5px;
-          position: relative;
-          background: #e2af22;
-          border-radius: 10px;
-          z-index: 1;
-          transform-origin: 4px 0px;
-          transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.85s ease;
-      }
+        a {
+            text-decoration: none;
+            font-weight: 720;
+            color: transparent;
+            font-family: 'Reforma 1918', sans-serif;
+        }
 
-      #menuToggle span:first-child {
-          transform-origin: 0% 0%;
-      }
+        #menuToggle a {
+            text-decoration: none;
+            color: #fefdfd;
+            transition: color 0.3s ease;
+        }
 
-      #menuToggle span:nth-last-child(2) {
-          transform-origin: 0% 100%;
-      }
+        #menuToggle a:hover {
+            color: gold;
+            /* colore of the text while hovering */
+        }
 
-      #menuToggle input:checked~span {
-          opacity: 1;
-          transform: rotate(45deg) translate(-2px, -2px);
-          background: gold;
-      }
+        #menuToggle input {
+            display: block;
+            position: absolute;
+            cursor: pointer;
+            opacity: 0;
+            z-index: 10;
+            width: 40px;
+            height: 40px;
+            -webkit-touch-callout: none;
+        }
 
-      #menuToggle input:checked~span:nth-last-child(3) {
-          opacity: 0;
-          transform: rotate(0deg) scale(0.2, 0.2);
-      }
+                /* And let's slide it in from the left */
+                #menuToggle input:checked~.card {
+                  transform: translate(3%, 1012%);
+        }
 
-      #menuToggle input:checked~span:nth-last-child(2) {
-          transform: rotate(-45deg) translate(0, -1px);
-      }
+        #menuToggle span {
+            display: block;
+            width: 35px;
+            height: 6px;
+            margin-bottom: 7px;
+            position: relative;
+            background: white;
+            border-radius: 10px;
+            z-index: 9;
+            transform-origin: 4px 0px;
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.85s ease;
+        }
 
-      /* And let's slide it in from the left */
+        #menuToggle::after {
+            position: absolute;
+            content: "";
+            top: 50px;
+            left: -100px;
+            right: 0;
+            z-index: -1;
+            transform: scale(0.9);
+            background-image: linear-gradient( var(--rotate), #42d3ff, #2a5ef8, #42079b);
+            opacity: 0.9;
+            transition: opacity .6s;
+            animation: spin 2.5s ease-in infinite alternate-reverse;
+            height: 90vh;
+            width: 20vw;
+            filter: blur(calc(var(--card-height) / 1.7));
+        }
 
-      #menuToggle input:checked~ul {
-          transform: translate(-15%, 30%);
-      }
+        #menuToggle span:first-child {
+            transform-origin: 0% 0%;
+        }
+
+        #menuToggle span:nth-last-child(2) {
+            transform-origin: 0% 100%;
+        }
+
+        #menuToggle input:checked~span {
+            opacity: 1;
+            transform: rotate(40deg) translate(0, 0);
+            background: white;
+        }
+
+        #menuToggle input:checked~span:nth-last-child(3) {
+            opacity: 0;
+            transform: rotate(40deg) scale(0.2, 0.2);
+        }
+
+        #menuToggle input:checked~span:nth-last-child(2) {
+            transform: rotate(-40deg) translate(0, 0);
+        }
   </style>
 </head>
 
-<body>
+   <body class="body">
     <section id="section1">
         <!-- This accesses the content of section1.html -->
         <object data="section1.html" width="100%" height="100%"></object>
@@ -226,13 +287,12 @@
         <object data="section4.html" width="100%" height="100%"></object>
     </section>
 
-
     <!-- Social Media Box -->
     <footer id="footer">
         <div class="footer">
             <div class="logo-img">
                 <div class="social-media">
-                    <a href="https://twitter.com/hmoosavi_tw" target="_blank"><i class="fab fa-twitter fa-2x" style="color: #fcb823;"></i></a>
+                    <a href="https://twitter.com/hmoosavi_tw/" target="_blank"><i class="fab fa-twitter fa-2x" style="color: #fcb823;"></i></a>
                     <a href="https://scholar.google.com/citations?user=8ofbk2kAAAAJ&hl=en" target="_blank"><i class="fab fa-google fa-2x" style="color: #fcb823;"></i></a>
                     <a href="https://www.linkedin.com/in/hmoosaviphd/" target="_blank"><i class="fab fa-linkedin fa-2x" style="color: #fcb823;"></i></a>
                     <a href="mailto:h.moosavi57@gmail.com"><i class="fas fa-envelope fa-2x" style="color: #fcb823;"></i></a>
@@ -251,7 +311,7 @@
         <span></span>
         <span></span>
         <span></span>
-        <ul id="menu">
+        <ul class="card" id="menu">
             <li><a href="#section1">All the way back!</a></li>
             <!-- Updated href to section1 -->
             <li><a href="#section3">About</a></li>
@@ -281,15 +341,9 @@
         });
     </script>
 
-    <script>
-    </script>
-
     <a href="#section2" id="arrow-link" style="color: #e2af22; position: fixed; bottom: 20px; left: 20px;">
-  <i class="fa-solid fa-angles-down fa-fade fa-2xl"></i>
-</a>
+    <i class="fa-solid fa-angles-down fa-fade fa-2xl"></i>
+    </a>
 
-
-
-</body>
-
+  </body>
 </html>
