@@ -13,21 +13,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css">
 
     <style>
-      .body {
-          margin: 0;
-          padding: 0;
-          overflow: auto;
-          background: #232323;
-          justify-content: center;
-          align-content: center;
-          align-items: center;
-          height: 100vh;
-      }
+  .body {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    background: #232323;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
       .section {
           height: 100vh;
           width: 100%;
-          overflow: auto; /* Allow scrolling */
       }
 
       /* Social Media Box */
@@ -88,7 +87,6 @@
       }
 
       /* Hide the social media box for other sections */
-
       #section3 .social-media,
       #section4 .social-media {
           display: none;
@@ -128,9 +126,9 @@
 
         .card {
     padding: 12px;
-    padding-top: 0px;
+    padding-top: 1px;
     padding-bottom: 2px;
-    width: 35vw;
+    width: 30vw;
     height: 15vh;
     position: relative;
     cursor: pointer;
@@ -141,7 +139,7 @@
     background: rgba(77, 73, 73, 0.15);
     transform-origin: top left;
     letter-spacing: 0.25px;
-    transform: translate(-80%, -100%);
+    transform: translate(-75%, -100%);
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.85s ease-in;
     box-shadow: 7px 7px 15px #11152b;
     border-radius: 11px;
@@ -267,26 +265,36 @@
   </style>
 </head>
 
-   <body class="body">
-<section id="section1">
+<body class="body">
+
+  <section id="section1">
     <!-- This accesses the content of section1.html -->
-    <object data="section1.html" style="width:100%; height:100vh;"></object>
+    <object data="section1.html" width="100%" height:100vh></object>
+    <!-- This accesses the content of music.html -->
+    <object data="music.html" width="100%" height:100vh></object>
 </section>
 
 <section id="section2">
     <!-- This accesses the content of section2.html -->
-    <object data="section2.html" style="width:100%; height:100vh;"></object>
+    <object data="section2.html" width="100%" height:100vh></object>
+    <!-- This accesses the content of music.html -->
+    <object data="music.html" width="100%" height:100vh></object>
 </section>
 
 <section id="section3">
     <!-- This accesses the content of section3.html -->
-    <object data="section3.html" style="width:100%; height:100vh;"></object>
+    <object data="section3.html" width="100%" height:100vh></object>
+    <!-- This accesses the content of music.html -->
+    <object data="music.html" width="100%" height:100vh></object>
 </section>
 
 <section id="section4">
     <!-- This accesses the content of section4.html -->
-    <object data="section4.html" style="width:100%; height:100vh;"></object>
+    <object data="section4.html" width="100%" height:100vh></object>
+    <!-- This accesses the content of music.html -->
+    <object data="music.html" width="100%" height:100vh></object>
 </section>
+
 
     <!-- Social Media Box -->
     <footer id="footer">
