@@ -1,301 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hossein Moosavi PhD Website</title>
-    <link href="https://fonts.cdnfonts.com/css/reforma-1918" rel="stylesheet">
-    <!-- Font Awesome CSS -->
+             
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css">
-    <!-- Academicons CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css">
+    
+    <!--Fonts --> 
+    <link href="https://fonts.cdnfonts.com/css/reforma-1918" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/bethanya" rel="stylesheet">
-
-    <style>
-  .body {
-    margin: 0;
-    padding: 0;
-    overflow: auto;
-    background: #232323;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-      .section {
-          height: 100vh;
-          width: 100%;
+    <link href="https://fonts.cdnfonts.com/css/maknoe" rel="stylesheet">
+  
+    <style>   
+      /* Global styles */
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+        background: #232323;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        height: 100vh;
       }
-
+  
+      /* Sections */
+      .section {
+        height: 100vh;
+        width: 100%;
+      }
+  
       /* Social Media Box */
       #footer {
-          min-height: 20vh;
-          width: 90%;
-          margin: auto;
-          z-index: 9999;
+        min-height: 20vh;
+        width: 90%;
+        margin: auto;
+        z-index: 9999;
       }
-
+  
       .footer {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: center;
-          z-index: 9999;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
       }
-
+  
       .logo-img {
-          width: 30%;
-          flex: 0 1 30%;
-          display: flex;
-          flex-flow: column;
-          justify-content: center;
-          align-items: center;
-          z-index: 9999;
+        width: 30%;
+        flex: 0 1 30%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
       }
-
+  
       .logo-img .social-media {
-          position: fixed;
-          top: 50%;
-          left: 0;
-          transform: translateY(-50%);
-          z-index: 9999;
-          background: transparent;
-          box-shadow: 2px 0px 6px #fcb823;
-          padding: 0.2rem;
-          /* Adjust the padding as desired */
-          border-radius: 10px;
+        position: fixed;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        z-index: 9999;
+        background: transparent;
+        box-shadow: 2px 0px 6px #fcb823;
+        padding: 0.2rem;
+        border-radius: 10px;
       }
-
+  
       .logo-img a {
-          display: block;
-          margin: 2rem 1rem 2rem 0.5rem;
-          cursor: pointer;
-          text-decoration: none;
-        z-index: 9999;
+        display: block;
+        margin: 2rem 1rem 2rem 0.5rem;
+        cursor: pointer;
+        text-decoration: none;
       }
-
+  
       .logo-img i {
-          font-size: 5rem;
-          color: #fcb823;
-          display: block;
-          cursor: pointer;
-        z-index: 9999;
+        font-size: 5rem;
+        color: #fcb823;
+        display: block;
+        cursor: pointer;
+        transition: transform 0.3s ease;
       }
-
+  
       /* Show the social media box only when viewing section1 and section2 */
-
       #section1 .social-media,
       #section2 .social-media {
-          display: block;
+        display: block;
       }
-
+  
       /* Hide the social media box for other sections */
       #section3 .social-media,
       #section4 .social-media {
-          display: none;
+        display: none;
       }
-
+      .social-media i:hover {
+    transform: scale(1.2);
+  }
+      /* Individual Sections */
       #section1 {
-          display: none;
-          opacity: 0;
-          transition: opacity 2s;
+        display: none;
+        opacity: 0;
+        transition: opacity 2s;
       }
-
+  
       #section1.active {
-          display: block;
-          opacity: 1;
+        display: block;
+        opacity: 1;
+      }
+  
+      /* Navigation Button */
+    @property --rotate {
+      syntax: "<angle>";
+      initial-value: 160deg;
+      inherits: false;
+    }
+
+    :root {
+      --rotate: 160deg;
+      --card-height: 40vh;
+      --card-width: 40vw;
+    }
+
+    @keyframes spin {
+      0% {
+        --rotate: 0deg;
       }
 
-        /* Navigation Button */
-        @property --rotate {
-            syntax: "<angle>";
-            initial-value: 160deg;
-            inherits: false;
-        }
-
-        :root {
-            --card-height: 40vh;
-            --card-width: 40vw;
-        }
-
-        @keyframes spin {
-            0% {
-                --rotate: 0deg;
-            }
-            100% {
-                --rotate: 360deg;
-            }
-        }
-
-        .card {
-    padding: 12px;
-    padding-top: 1px;
-    padding-bottom: 2px;
-    width: 350px;
-    height: 25%;
-    position: relative;
-    cursor: pointer;
-    font-size: 26px;
-    font-weight: 820;
-    font-style: italic;
-    font-family: 'Reforma 1918', sans-serif;
-    background: rgba(77, 73, 73, 0.15);
-    transform-origin: top left;
-    letter-spacing: 0.25px;
-    transform: translate(-79%, -94%);
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.85s ease-in;
-    box-shadow: 7px 7px 15px #11152b;
-    border-radius: 11px;
-    z-index: 997;
-}
-
-        #menu {
-            list-style-type: none;
-            /* Removes the default bullets */
-            padding: 0;
-        }
-
-        #menu li::before {
-            content: "\007B";
-            /* Bullet symbol. */
-            color: white;
-            /* Bullet color */
-            font-size: 27px;
-            /* Bullet size */
-            font-weight: 520;
-            padding-right: 15px;
-            /* Space between bullet and text */
-            font-family: 'New Year Page', sans-serif;
-            font-style: bold;
-        }
-
-        #menuToggle {
-            display: block;
-            position: fixed;
-            top: 30px;
-            left: 30px;
-            z-index: 999;
-            -webkit-user-select: none;
-            user-select: none;
-        }
-
-        a {
-            text-decoration: none;
-            font-weight: 720;
-            color: transparent;
-            font-family: 'Reforma 1918', sans-serif;
-        }
-
-        #menuToggle a {
-            text-decoration: none;
-            color: #fefdfd;
-            transition: color 0.3s ease;
-        }
-
-        #menuToggle a:hover {
-            color: gold;
-            /* colore of the text while hovering */
-        }
-
-        #menuToggle input {
-            display: block;
-            position: absolute;
-            cursor: pointer;
-            opacity: 0;
-            z-index: 998;
-            width: 50px;
-            height: 50px;
-            -webkit-touch-callout: none;
-        }
-
-                /* And let's slide it in from the left */
-                #menuToggle input:checked~.card {
-                  transform: translate(2%, 9%);
-        }
-
-        #menuToggle span {
-            display: block;
-            width: 35px;
-            height: 6px;
-            margin-bottom: 7px;
-            position: relative;
-            background: white;
-            border-radius: 10px;
-            z-index: 20;
-            transform-origin: 4px 0px;
-            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.85s ease;
-        }
-
-        #menuToggle::after {
-            position: absolute;
-            content: "";
-            top: 50px;
-            left: -100px;
-            right: 0;
-            z-index: -1;
-            transform: scale(0.9);
-            background-image: linear-gradient( var(--rotate), #42d3ff, #2a5ef8, #42079b);
-            opacity: 0.9;
-            transition: opacity .6s;
-            animation: spin 2.5s ease-in infinite alternate-reverse;
-            height: 90vh;
-            width: 20vw;
-            filter: blur(calc(var(--card-height) / 1.7));
-        }
-
-        #menuToggle span:first-child {
-            transform-origin: 0% 0%;
-        }
-
-        #menuToggle span:nth-last-child(2) {
-            transform-origin: 0% 100%;
-        }
-
-        #menuToggle input:checked~span {
-            opacity: 1;
-            transform: rotate(40deg) translate(0, 0);
-            background: white;
-        }
-
-        #menuToggle input:checked~span:nth-last-child(3) {
-            opacity: 0;
-            transform: rotate(40deg) scale(0.2, 0.2);
-        }
-
-        #menuToggle input:checked~span:nth-last-child(2) {
-            transform: rotate(-40deg) translate(0, 0);
-        }
-#music {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 20; /* Ensure the music content is behind the sections */
-}
-body {
+      100% {
+        --rotate: 360deg;
+      }
+    }  
+      #menuToggle {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 999;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+  
+      a {
+        text-decoration: none;
+        font-weight: 720;
+        color: transparent;
+        font-family: 'Reforma 1918', sans-serif;
+      }
+  
+      #menuToggle a {
+        text-decoration: none;
+        color: #fefdfd;
+        transition: color 0.3s ease;
+      }
+  
+      #menuToggle a:hover {
+        color: gold;
+      }
+  
+      #menuToggle input {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 998;
+        width: 50px;
+        height: 50px;
+        -webkit-touch-callout: none;
+      }
+  
+      #menuToggle span {
+        display: block;
+        width: 35px;
+        height: 6px;
+        margin-bottom: 7px;
+        position: relative;
+        background: white;
+        border-radius: 10px;
+        z-index: 20;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.85s ease;
+      }
+  
+      #menuToggle::after {
+        position: absolute;
+        content: "";
+        top: 50px;
+        left: -320px;
+        right: 0;
+        z-index: -1;
+        transform: scale(0.9);
+        background-image: linear-gradient(var(--rotate), #42d3ff, #2a5ef8, #42079b);
+        opacity: 0.7;
+        transition: opacity 0.9s;
+        animation: spin 3.5s ease-in infinite;
+        height: 85vh;
+        width: 40vw;
+        filter: blur(calc(var(--card-height) / 1.7));
+      }
+  
+      #menuToggle span:first-child {
+        transform-origin: 0% 0%;
+      }
+  
+      #menuToggle span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+      }
+  
+      #menuToggle input:checked~span {
+        opacity: 1;
+        transform: rotate(40deg) translate(0, 0);
+        background: white;
+      }
+  
+      #menuToggle input:checked~span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(40deg) scale(0.2, 0.2);
+      }
+  
+      #menuToggle input:checked~span:nth-last-child(2) {
+        transform: rotate(-40deg) translate(0, 0);
+      }
+  
+      /* Card */
+      .card {
+        padding: 12px;
+        padding-top: 1px;
+        padding-bottom: 2px;
+        width: 370px;
+        height: 25%;
+        position: relative;
+        cursor: pointer;
+        font-size: 25px;
+        font-weight: 820;
+        font-style: italic;
+        font-family: 'Reforma 1918', sans-serif;
+        background: rgba(77, 73, 73, 0.15);
+        transform-origin: top left;
+        letter-spacing: 0.25px;
+        transform: translate(-82%, -98%);
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.85s ease-in;
+        box-shadow: 7px 7px 15px #11152b;
+        border-radius: 10px;
+        z-index: 997;
+      }
+  
+      /* Menu */
+      #menu {
+        list-style-type: none;
+        padding: 0;
+      }
+  
+      #menu li::before {
+        content: "\007B";
+        color: white;
+        font-size: 27px;
+        font-weight: 520;
+        padding-right: 15px;
+        padding-left: 5px;
+        font-family: 'New Year Page', sans-serif;
+        font-style: bold;
+      }
+      #menuToggle input:checked~.card {
+        transform: translate(2%, 10%);
+      }
+      /* Music */
+      #music {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 20;
+      }
+      body {
     margin: 0;
     padding: 0;
-}
-
-.page-header {
-      font-family: 'Bethanya', sans-serif;
-      font-size: 20px;
+    }
+    .page-header {
+      font-family: 'Maknoe', sans-serif;
+      font-size: 18px;
       color: #ffffffc5;
-      padding-bottom: 1px;
-      margin-left: 10px;
+      padding-bottom: 2px;
+      margin-left: 0px;
       z-index: 25;
       position: absolute;
       bottom: 40px;
       left: 9px;
     }
-
-  </style>
-</head>
+    </style>
+  </head>
 
 <body class="body">
-
   <object id="music" data="music.html" width="100%"; height:100vh;"></object>
 
   <section id="section1">
@@ -368,7 +366,7 @@ body {
     </script>
 
     <!-- "hello" text above arrow-link -->
-    <div class="page-header">hello</div>
+    <div class="page-header">Begin<br>here</div>
     <a href="#section2" id="arrow-link" style="color: #e2af22; position: fixed; bottom: 20px; left: 20px;">
     <i class="fa-solid fa-angles-down fa-fade fa-2xl"></i>
     </a>
