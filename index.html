@@ -372,11 +372,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+                                                                              
+    <!-- "hello" text above arrow-link -->
+    <div class="arrow-head" id="here-element" style="position: fixed; bottom: 60px; right: 25px;">Here!</div>
+    <a href="#section2" id="arrow-link" style="color: #e2af22; position: fixed; bottom: 30px; right: 30px;">
+    <i class="fa-solid fa-angles-down fa-fade fa-2xl"></i>
+                                                     
+    </a>
 <script>
         $(document).ready(function() {
             // Show section 1 initially
             $('#section1').addClass('active');
+            $("#section1").load("section1.html");
 
             // Hide the arrow link when in section 2
             $('a[href="#section2"]').click(function() {
@@ -388,11 +395,7 @@
             });
         });
 </script>
-    <!-- "hello" text above arrow-link -->
-    <div class="arrow-head" id="here-element" style="position: fixed; bottom: 60px; right: 25px;">Here!</div>
-    <a href="#section2" id="arrow-link" style="color: #e2af22; position: fixed; bottom: 30px; right: 30px;">
-    <i class="fa-solid fa-angles-down fa-fade fa-2xl"></i>
-    </a>
+
  <!--                                     
 <div id="wrapper">
     <div class="icon-header">pages</div>
