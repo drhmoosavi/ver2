@@ -284,12 +284,7 @@
         left: 0;
         z-index: 20;
       }
-        
-      body {
-    margin: 0;
-    padding: 0;
-    }
-        
+ 
     .page-header {
       font-family: 'Reforma 1918', sans-serif;
       font-size: 17px;
@@ -370,26 +365,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            // Show section 1 initially
-            $('#section1').addClass('active');
 
-            // Hide the arrow link when in section 2
-            $('a[href="#section2"]').click(function() {
-                $('#arrow-link').hide();
-                $('#section1').removeClass('active');
-                setTimeout(function() {
-                    $('#section2').addClass('active');
-                }, 1000);
-            });
+<script>
+    $(document).ready(function() {
+        // Show section 1 initially
+        $('#section1').addClass('active');
+
+        // Hide the arrow link when in section 2
+        $('a[href="#section2"]').click(function() {
+            $('#arrow-link').hide();
+            $('#section1').removeClass('active');
+            setTimeout(function() {
+                $('#section2').addClass('active');
+            }, 1000);
         });
+
         // Hide the page-header when arrow-link is clicked
         $('#arrow-link').click(function() {
             $('.page-header').hide();
         });
     });
-    </script>
+</script>
+
 
 <script>
         // Load the pagination HTML into the container
