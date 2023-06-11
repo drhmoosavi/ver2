@@ -381,28 +381,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
-$(document).ready(function() {
-    const numSections = 4; // Total number of sections.
-    const paginationList = document.getElementById('pagination');
-    
-    // Create pagination dynamically.
-    for (let i = 1; i <= numSections; i++) {
-        const listItem = document.createElement('li');
-        const link = document.createElement('a');
-        link.href = `section${i}.html`;
-        link.textContent = i;
-        listItem.appendChild(link);
-        paginationList.appendChild(listItem);
-    }
-    
-    // Set the current active link.
-    const pathname = window.location.pathname;
-    const sectionNumber = pathname.match(/section(\d+)/) ? pathname.match(/section(\d+)/)[1] : null;
-    
-    if (sectionNumber) {
-        document.querySelector(`#pagination a[href="section${sectionNumber}.html"]`).parentElement.classList.add('active');
-    }
-});
+        $(document).ready(function() {
+            // Show section 1 initially
+            $('#section1').addClass('active');
+
+            // Hide the arrow link when in section 2
+            $('a[href="#section2"]').click(function() {
+                $('#arrow-link').hide();
+                $('#section1').removeClass('active');
+                setTimeout(function() {
+                    $('#section2').addClass('active');
+                }, 1000);
+            });
+        });
 </script>
                                          
   </body>
