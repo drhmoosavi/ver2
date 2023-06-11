@@ -403,6 +403,11 @@ $(document).ready(function() {
         $('#arrow-link').show();
         $('#here-element').show();
         $('#pagination').hide(); // Hide pagination on index.html and section1.html
+        
+        // Hide other sections initially
+        for (let i = 2; i <= numSections; i++) {
+            $(`#section${i}`).hide();
+        }
     } else {
         $('#arrow-link').hide();
         $('#here-element').hide();
