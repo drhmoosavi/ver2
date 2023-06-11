@@ -298,15 +298,22 @@
       bottom: 40px;
       left: 12px;
     }
-
+        
+#pagination-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 100; /* High z-index */
+    }
+        
     </style>
   </head>
 
 <body class="body index">
   <object id="music" data="music.html" width="100%"; height:100vh;"></object>
 
-  <!-- Include the pagination -->
-    <div id="pagination-container"></div>
+<!-- Include the pagination -->
+<iframe id="pagination-container" src="pagination.html" style="width:200px; height:200px; position: fixed; bottom: 0; left: 0;"></iframe>
                                                                                             
   <section id="section1">
     <!-- This accesses the content of section1.html -->
