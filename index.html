@@ -43,7 +43,8 @@
       .section {
         height: 100vh;
         width: 100%;
-        position: relative; /* Added to establish a new stacking context for z-index */
+        position: fixed; /* Added to establish a new stacking context for z-index */
+        display:flex;
       }    
       /* Hide the arrow-link in sections other than index.html */
       #section1.active  #arrow-link{
