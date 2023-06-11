@@ -1,10 +1,11 @@
     <link href="https://fonts.cdnfonts.com/css/reforma-1918" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/bethanya" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/maghikle" rel="stylesheet">
+
 html, body {
   height: 100%;
   margin: 0;
-  overflow: auto;
+  overflow: hidden;
 }
 .name {
   position: fixed;
