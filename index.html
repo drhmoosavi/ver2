@@ -213,7 +213,7 @@
         position: relative;
         background: white;
         border-radius: 10px;
-        z-index: 20;
+        z-index: 100;
         transform-origin: 4px 0px;
         transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.85s ease;
       }
@@ -285,6 +285,7 @@
       #menu {
         list-style-type: none;
         padding: 0;
+        z-index: 997;
       }
   
       #menu li::before {
@@ -296,6 +297,7 @@
         padding-left: 5px;
         font-family: 'New Year Page', sans-serif;
         font-style: bold;
+         z-index: 997;
       }
       #menuToggle input:checked~.card {
         transform: translate(2%, 10%);
