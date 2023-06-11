@@ -354,13 +354,14 @@
             <li><a href="index.html">All the way back!</a></li>
         </ul>
     </div>
-
+                                    
     <!-- "hello" text above arrow-link -->
     <div class="page-header">Here!</div>
     <a href="#section2" id="arrow-link" style="color: #e2af22; position: fixed; bottom: 22px; left: 20px;">
     <i class="fa-solid fa-angles-down fa-fade fa-2xl"></i>
     </a>
-
+<!-- Assign an ID to the "Here!" element -->
+<div id="here-element" class="page-header">Here!</div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.js"></script>
@@ -371,18 +372,29 @@
         // Show section 1 initially
         $('#section1').addClass('active');
 
-        // Hide the arrow link when in section 2
+        // Update the arrow-link click handler to also hide the "Here!" element
         $('a[href="#section2"]').click(function() {
             $('#arrow-link').hide();
+            $('#here-element').hide(); // Hide the "Here!" element
             $('#section1').removeClass('active');
             setTimeout(function() {
                 $('#section2').addClass('active');
             }, 1000);
         });
 
-        // Hide the page-header when arrow-link is clicked
-        $('#arrow-link').click(function() {
-            $('.page-header').hide();
+        // Listen for hash changes (i.e., when the user navigates to different sections)
+        $(window).on('hashchange', function() {
+            var hash = window.location.hash;
+
+            if (hash === "#section1") {
+                // Show the "Here!" element and arrow-link when in section 1
+                $('#arrow-link').show();
+                $('#here-element').show();
+            } else {
+                // Hide the "Here!" element and arrow-link when not in section 1
+                $('#arrow-link').hide();
+                $('#here-element').hide();
+            }
         });
     });
 </script>
