@@ -35,9 +35,10 @@
      }
 
       /* Hide the arrow-link in sections other than index.html */
-        body:not(.index) #arrow-link {
-        display: none;
-    }
+      body.index #arrow-link {
+      display: none;
+       }
+
       /* Sections */
       .section {
         height: 100vh;
@@ -352,10 +353,7 @@
     <a href="#section2" id="arrow-link" style="color: #e2af22; position: fixed; bottom: 30px; right: 30px;">
     <i class="fa-solid fa-angles-down fa-fade fa-2xl"></i>
     </a>
-
-    <!-- Assign an ID to the "Here!" element -->
-    <div id="here-element" class="page-header">Here!</div>
-                                                                                                  
+                                                     
 <div id="wrapper">
     <div class="icon-header">pages</div>
     <ul id="pagination"></ul>
@@ -390,7 +388,7 @@ $(document).ready(function() {
     }
     
     // Show/Hide 'here-element' and 'arrow-link' based on the section.
-    if (pathname.includes('section1.html') || pathname.endsWith('index.html')) {
+    if (pathname.includes('section1.html') && pathname.endsWith('index.html')) {
         $('#arrow-link').show();
         $('#here-element').show();
         $('#pagination').hide(); // Hide pagination on index.html and section1.html
