@@ -367,37 +367,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<script>
-    $(document).ready(function() {
-        // Show section 1 initially
-        $('#section1').addClass('active');
+   <script>
+        $(document).ready(function() {
+            // Show section 1 initially
+            $('#section1').addClass('active');
 
-        // Update the arrow-link click handler to also hide the "Here!" element
-        $('a[href="#section2"]').click(function() {
-            $('#arrow-link').hide();
-            $('#here-element').hide(); // Hide the "Here!" element
-            $('#section1').removeClass('active');
-            setTimeout(function() {
-                $('#section2').addClass('active');
-            }, 1000);
-        });
-
-        // Listen for hash changes (i.e., when the user navigates to different sections)
-        $(window).on('hashchange', function() {
-            var hash = window.location.hash;
-
-            if (hash === "#section1") {
-                // Show the "Here!" element and arrow-link when in section 1
-                $('#arrow-link').show();
-                $('#here-element').show();
-            } else {
-                // Hide the "Here!" element and arrow-link when not in section 1
+            // Hide the arrow link when in section 2
+            $('a[href="#section2"]').click(function() {
                 $('#arrow-link').hide();
-                $('#here-element').hide();
-            }
+                $('#section1').removeClass('active');
+                setTimeout(function() {
+                    $('#section2').addClass('active');
+                }, 1000);
+            });
         });
-    });
-</script>
+    </script>
 
 
 <script>
