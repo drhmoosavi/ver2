@@ -313,7 +313,7 @@
   <object id="music" data="music.html" width="100%"; height:100vh;"></object>
 
 <!-- Include the pagination -->
-<iframe id="pagination-container" src="pagination.html" style="width:200px; height:200px; position: fixed; bottom: 0; left: 0;"></iframe>
+<iframe id="pagination-container" src="pagination.html" frameBorder="0" name="" style="width:80px; height:200px; position: fixed; bottom: 0; left: 0;"></iframe>
                                                                                             
   <section id="section1">
     <!-- This accesses the content of section1.html -->
@@ -364,11 +364,16 @@
                                     
     <!-- "hello" text above arrow-link -->
     <div class="page-header">Here!</div>
-    <a href="#section2" id="arrow-link" style="color: #e2af22; position: fixed; bottom: 22px; left: 20px;">
+    <a href="#section2" id="arrow-link" style="color: #e2af22; position: fixed; bottom: 22px; right: 20px;">
     <i class="fa-solid fa-angles-down fa-fade fa-2xl"></i>
     </a>
-<!-- Assign an ID to the "Here!" element -->
-<div id="here-element" class="page-header">Here!</div>
+    <!-- Assign an ID to the "Here!" element -->
+    <div id="here-element" class="page-header">Here!</div>
+
+<div id="wrapper">
+    <div class="icon-header">pages</div>
+    <ul id="pagination"></ul>
+</div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.js"></script>
@@ -405,22 +410,29 @@
         });
     });
 </script>
-                                   
+                                                                         
   <!-- jQuery code to hide and show pagination -->
-  <script>
-    $(document).ready(function() {
-      $(window).on('hashchange', function() {
-        var hash = window.location.hash;
-        if (hash === "#section1" || window.location.pathname === '/index.html') {
-          // Hide the pagination when in section 1 or index.html
-          $('#pagination-container').hide();
-        } else {
-          // Show the pagination when not in section 1 or index.html
-          $('#pagination-container').show();
-        }
-      });
-    });
-  </script>
-                                                     
+ <script>
+    const numSections = document.querySelectorAll('section[id^="section"]').length;
+    const paginationList = document.getElementById('pagination');
+    for (let i = 1; i <= numSections; i++) {
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = `#section${i}`;
+        link.textContent = i;
+        listItem.appendChild(link);
+        paginationList.appendChild(listItem);
+    }
+
+    const hash = window.location.hash;
+    if (window.location.pathname === '/index.html' || hash === "#section1") {
+        document.querySelector('#pagination').style.display = 'none';
+    } else {
+        const sectionId = hash.replace('#', '');
+        const activeLink = document.querySelector(`#pagination a[href="#${sectionId}"]`);
+        activeLink.classList.add('active');
+    }
+</script>
+                                              
   </body>
 </html>
