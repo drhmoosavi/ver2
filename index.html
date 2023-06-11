@@ -43,6 +43,8 @@
       .section {
         height: 100vh;
         width: 100%;
+          overflow: hidden; /* Added to prevent unwanted scrolling */
+      position: relative; /* Added to establish a new stacking context for z-index */
       }
   
       /* Individual Sections */
