@@ -405,19 +405,22 @@
         });
     });
 </script>
-
-
-<script>
-        // Load the pagination HTML into the container
-        fetch('pagination.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('pagination-container').innerHTML = html;
-            })
-            .catch(error => {
-                console.warn(error);
-            });
-    </script>
+                                   
+  <!-- jQuery code to hide and show pagination -->
+  <script>
+    $(document).ready(function() {
+      $(window).on('hashchange', function() {
+        var hash = window.location.hash;
+        if (hash === "#section1" || window.location.pathname === '/index.html') {
+          // Hide the pagination when in section 1 or index.html
+          $('#pagination-container').hide();
+        } else {
+          // Show the pagination when not in section 1 or index.html
+          $('#pagination-container').show();
+        }
+      });
+    });
+  </script>
                                                      
   </body>
 </html>
