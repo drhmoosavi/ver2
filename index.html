@@ -45,8 +45,7 @@
       .section {
         height: 100vh;
         width: 100%;
-          overflow: hidden; /* Added to prevent unwanted scrolling */
-      position: relative; /* Added to establish a new stacking context for z-index */
+        position: relative; /* Added to establish a new stacking context for z-index */
       }
   
       /* Individual Sections */
@@ -58,7 +57,7 @@
   
       #section1.active {
         display: block;
-        opacity: 1;
+        opacity: 0;
       }
     
       /* Hide the arrow-link in sections other than index.html */
