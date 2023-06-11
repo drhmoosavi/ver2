@@ -1,110 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.cdnfonts.com/css/bethanya" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/mythical-glorious" rel="stylesheet">
-    <style>
-        /* CSS styles for pagination */
-        html, body {
-            background: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        * {
-            position: fixed;
-        }
-
-        #wrapper {
-            font-weight: 700;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: flex-start;
-            height: 100vh;
-            z-index: 20;
-        }
-
-        .icon-header {
-            font-family: 'Bethanya', sans-serif;
-            font-size: 22px;
-            color: #ffffffc5;
-            padding-bottom: 1px;
-            margin-left: 10px;
-            position: fixed;
-            bottom: 10px;
-            left: 10px;
-            z-index: 20;
-        }
-
-        #pagination {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            font-size: 16px;
-            font-weight: 700;
-            margin: 0%;
-            margin-left: -32px;
-        }
-
-        #pagination li {
-            display: inline;
-        }
-
-        #pagination li a {
-            display: inline-block;
-            text-decoration: none;
-            padding: 1px 4px;
-            color: #f3eeee7c;
-            font-family: 'Mythical Glorious', sans-serif;
-            font-size: 20px;
-            font-weight: 1000;
-        }
-
-        #pagination li:not(:last-child) {
-            margin-bottom: -2px;
-        }
-
-        /* Active and Hoverable Pagination */
-        #pagination li a {
-            border-radius: 20px;
-            -webkit-transition: background-color 0.3s;
-            transition: background-color 0.3s;
-        }
-
-        #pagination li a.active {
-            background-color: #07b6f1ea;
-            color: #03051e;
-            padding: 1px 8px;
-            margin-left: 20px;
-            font-family: 'Mythical Glorious', sans-serif;
-            font-size: 24px;
-            font-weight: 1000;
-            border: 2px solid whitesmoke;
-        }
-
-        #pagination li a:hover:not(.active) {
-            background-color: #66d975ba;
-            padding: 1px 7px;
-            color: #03051e;
-            border: 2px solid whitesmoke;
-        }
-    </style>
-</head>
-
-<body>
 <div id="wrapper">
     <div class="icon-header">pages</div>
     <ul id="pagination"></ul>
 </div>
 
 <script>
-    // Get the number of sections based on the IDs
     const numSections = document.querySelectorAll('section[id^="section"]').length;
-
-    // Generate the pagination list items
     const paginationList = document.getElementById('pagination');
     for (let i = 1; i <= numSections; i++) {
         const listItem = document.createElement('li');
@@ -115,16 +15,11 @@
         paginationList.appendChild(listItem);
     }
 
-    // Check if the current page is index.html
     if (window.location.pathname === '/index.html') {
-        // Hide the pagination for the first page
         document.querySelector('#pagination').style.display = 'none';
     } else {
-        // Set the active class for the corresponding section
         const sectionId = window.location.hash.replace('#', '');
         const activeLink = document.querySelector(`#pagination a[href="#${sectionId}"]`);
         activeLink.classList.add('active');
     }
 </script>
-</body>
-</html>
