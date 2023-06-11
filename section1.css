@@ -8,6 +8,7 @@
   font-style: italic;
   color: white;
   text-transform: capitalize;
+  z-index:100;
 }
 
 .name span {
