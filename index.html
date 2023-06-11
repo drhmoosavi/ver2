@@ -376,58 +376,39 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
-    $(document).ready(function() {
-        // Show section 1 initially
-        $('#section1').addClass('active');
-
-        // Update the arrow-link click handler to also hide the "Here!" element
-        $('a[href="#section2"]').click(function() {
-            $('#arrow-link').hide();
-            $('#here-element').hide(); // Hide the "Here!" element
-            $('#section1').removeClass('active');
-            setTimeout(function() {
-                $('#section2').addClass('active');
-            }, 1000);
-        });
-
-        // Listen for hash changes (i.e., when the user navigates to different sections)
-        $(window).on('hashchange', function() {
-            var hash = window.location.hash;
-
-            if (hash === "#section1") {
-                // Show the "Here!" element and arrow-link when in section 1
-                $('#arrow-link').show();
-                $('#here-element').show();
-            } else {
-                // Hide the "Here!" element and arrow-link when not in section 1
-                $('#arrow-link').hide();
-                $('#here-element').hide();
-            }
-        });
-    });
-</script>
-                                                                         
-  <!-- jQuery code to hide and show pagination -->
- <script>
-    const numSections = document.querySelectorAll('section[id^="section"]').length;
+$(document).ready(function() {
+    const numSections = 4; // Total number of sections.
     const paginationList = document.getElementById('pagination');
+    
+    // Create pagination dynamically.
     for (let i = 1; i <= numSections; i++) {
         const listItem = document.createElement('li');
         const link = document.createElement('a');
-        link.href = `#section${i}`;
+        link.href = `section${i}.html`;
         link.textContent = i;
         listItem.appendChild(link);
         paginationList.appendChild(listItem);
     }
-
-    const hash = window.location.hash;
-    if (window.location.pathname === '/index.html' || hash === "#section1") {
-        document.querySelector('#pagination').style.display = 'none';
-    } else {
-        const sectionId = hash.replace('#', '');
-        const activeLink = document.querySelector(`#pagination a[href="#${sectionId}"]`);
-        activeLink.classList.add('active');
+    
+    // Set the current active link.
+    const pathname = window.location.pathname;
+    const sectionNumber = pathname.match(/section(\d+)/) ? pathname.match(/section(\d+)/)[1] : null;
+    
+    if (sectionNumber) {
+        document.querySelector(`#pagination a[href="section${sectionNumber}.html"]`).parentElement.classList.add('active');
     }
+    
+    // Show/Hide 'here-element' and 'arrow-link' based on the section.
+    if (pathname.includes('section1.html') || pathname.endsWith('index.html')) {
+        $('#arrow-link').show();
+        $('#here-element').show();
+        $('#pagination').hide(); // Hide pagination on index.html and section1.html
+    } else {
+        $('#arrow-link').hide();
+        $('#here-element').hide();
+        $('#pagination').show(); // Show pagination on other pages
+    }
+});
 </script>
                                               
   </body>
