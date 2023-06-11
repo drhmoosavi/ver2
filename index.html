@@ -294,10 +294,11 @@
       color: #ffffffc5;
     }
         
-#pagination-container {
+    #pagination-container {
       position: fixed;
       bottom: 0;
       left: 0;
+      width:80px; height:200px;
       z-index: 100; /* High z-index */
     }
         
@@ -306,9 +307,6 @@
 
 <body class="body index">
   <object id="music" data="music.html" width="100%"; height:100vh;"></object>
-
-<!-- Include the pagination -->
-<iframe id="pagination-container" src="pagination.html" frameBorder="0" name="" style="width:80px; height:200px; position: fixed; bottom: 0; left: 0;"></iframe>
                                                                                             
   <section id="section1">
     <!-- This accesses the content of section1.html -->
@@ -358,12 +356,14 @@
     </div>
                                     
     <!-- "hello" text above arrow-link -->
+     <div id="here-element" class="page-header" style="position: fixed; bottom: 65px; right: 27px;">Here!</div>
     <div class="page-header">Here!</div>
     <a href="#section2" id="arrow-link" style="color: #e2af22; position: fixed; bottom: 30px; right: 30px;">
     <i class="fa-solid fa-angles-down fa-fade fa-2xl"></i>
     </a>
+
     <!-- Assign an ID to the "Here!" element -->
-    <div id="here-element" class="page-header" style="position: fixed; bottom: 65px; right: 27px;">Here!</div>
+    <div id="here-element" class="page-header">Here!</div>
                                                                                                   
 <div id="wrapper">
     <div class="icon-header">pages</div>
