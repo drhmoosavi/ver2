@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>H Moosavi PhD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hossein Moosavi PhD Website</title>
              
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css">
@@ -13,9 +13,8 @@
     <!--Fonts --> 
     <link href="https://fonts.cdnfonts.com/css/reforma-1918" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/bethanya" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/maghikle" rel="stylesheet">
-    <!-- link to your pagination styles -->
-    
+    <link href="https://fonts.cdnfonts.com/css/maknoe" rel="stylesheet">
+  
     <style>   
       /* Global styles */
       body {
@@ -28,8 +27,7 @@
         align-items: center;
         height: 100vh;
       }
-
-    }
+  
       /* Sections */
       .section {
         height: 100vh;
@@ -277,30 +275,27 @@
         left: 0;
         z-index: 20;
       }
- 
+      body {
+    margin: 0;
+    padding: 0;
+    }
     .page-header {
-      font-family: 'Reforma 1918', sans-serif;
-      font-size: 17px;
-      font-weight: 50;
-      font-style: oblique;
+      font-family: 'Maknoe', sans-serif;
+      font-size: 18px;
       color: #ffffffc5;
-      padding-bottom: 8px;
+      padding-bottom: 2px;
       margin-left: 0px;
-      z-index: 5;
+      z-index: 25;
       position: absolute;
       bottom: 40px;
-      left: 12px;
+      left: 9px;
     }
-
     </style>
   </head>
 
-<body class="body index">
+<body class="body">
   <object id="music" data="music.html" width="100%"; height:100vh;"></object>
 
-  <!-- Include the pagination -->
-    <div id="pagination-container"></div>
-                                                                                            
   <section id="section1">
     <!-- This accesses the content of section1.html -->
     <object data="section1.html" style="width:100%; height:100vh;"></object>
@@ -341,26 +336,20 @@
         <span></span>
         <span></span>
         <ul class="card" id="menu">
-            <!-- Updated href to section3 -->
-            <li><a href="#section3">About</a></li>
-            <li><a href="mailto:h.moosavi57@gmail.com">Contact</a></li>
             <li><a href="index.html">All the way back!</a></li>
+            <!-- Updated href to section1 -->
+            <li><a href="#section3">About</a></li>
+            <!-- Updated href to section3 -->
+            <li><a href="mailto:h.moosavi57@gmail.com">Contact</a></li>
+            <!-- Updated href to your email address -->
         </ul>
     </div>
-                                    
-    <!-- "hello" text above arrow-link -->
-    <div class="page-header">Here!</div>
-    <a href="#section2" id="arrow-link" style="color: #e2af22; position: fixed; bottom: 22px; left: 20px;">
-    <i class="fa-solid fa-angles-down fa-fade fa-2xl"></i>
-    </a>
-<!-- Assign an ID to the "Here!" element -->
-<div id="here-element" class="page-header">Here!</div>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-   <script>
+    <script>
         $(document).ready(function() {
             // Show section 1 initially
             $('#section1').addClass('active');
@@ -375,6 +364,12 @@
             });
         });
     </script>
-                                                     
+
+    <!-- "hello" text above arrow-link -->
+    <div class="page-header">Begin<br>here</div>
+    <a href="#section2" id="arrow-link" style="color: #e2af22; position: fixed; bottom: 20px; left: 20px;">
+    <i class="fa-solid fa-angles-down fa-fade fa-2xl"></i>
+    </a>
+
   </body>
 </html>
