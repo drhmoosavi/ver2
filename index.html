@@ -402,26 +402,6 @@ $(document).ready(function() {
     if (sectionNumber) {
         document.querySelector(`#pagination a[href="section${sectionNumber}.html"]`).parentElement.classList.add('active');
     }
-    
-    // Show/Hide 'here-element' and 'arrow-link' based on the section.
-    if (pathname.includes('section1.html') || pathname.endsWith('index.html')) {
-        $('#arrow-link').show();
-        $('#here-element').show();
-        $('#pagination').hide(); // Hide pagination on index.html and section1.html
-        
-        // Show section1 and hide other sections initially
-        for (let i = 1; i <= numSections; i++) {
-            if (i === 1) {
-                $(`#section${i}`).show();
-            } else {
-                $(`#section${i}`).hide();
-            }
-        }
-    } else {
-        $('#arrow-link').hide();
-        $('#here-element').hide();
-        $('#pagination').show(); // Show pagination on other pages
-    }
 });
 </script>
                                          
