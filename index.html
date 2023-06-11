@@ -36,7 +36,7 @@
 
       /* Hide the arrow-link in sections other than index.html */
       body.index #arrow-link {
-      display: none;
+      display: block;
        }
 
       /* Sections */
@@ -56,6 +56,11 @@
         display: block;
         opacity: 1;
       }
+    
+      /* Hide the arrow-link in sections other than index.html */
+    #section1.active  #arrow-link{
+      display: block;
+       }
         
       /* Social Media Box */
       #footer {
@@ -299,7 +304,7 @@
         z-index: 20;
       }
  
-    .page-header {
+    .arrow-head {
       font-family: 'Reforma 1918', sans-serif;
       font-size: 17px;
       font-weight: 50;
@@ -360,12 +365,12 @@
     </div>
                                     
     <!-- "hello" text above arrow-link -->
-     <div id="here-element" class="page-header" style="position: fixed; bottom: 65px; right: 27px;">Here!</div>
-    <div class="page-header">Here!</div>
+    <div class="arrow-head" id="here-element" style="position: fixed; bottom: 60px; right: 25px;">Here!</div>
     <a href="#section2" id="arrow-link" style="color: #e2af22; position: fixed; bottom: 30px; right: 30px;">
     <i class="fa-solid fa-angles-down fa-fade fa-2xl"></i>
     </a>
                                                      
+   <link href="pagination.css" rel="stylesheet">                                        
 <div id="wrapper">
     <div class="icon-header">pages</div>
     <ul id="pagination"></ul>
@@ -376,7 +381,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<script>
+    <script>
 $(document).ready(function() {
     const numSections = 4; // Total number of sections.
     const paginationList = document.getElementById('pagination');
@@ -400,14 +405,18 @@ $(document).ready(function() {
     }
     
     // Show/Hide 'here-element' and 'arrow-link' based on the section.
-    if (pathname.includes('section1.html') && pathname.endsWith('index.html')) {
+    if (pathname.includes('section1.html') || pathname.endsWith('index.html')) {
         $('#arrow-link').show();
         $('#here-element').show();
         $('#pagination').hide(); // Hide pagination on index.html and section1.html
         
-        // Hide other sections initially
-        for (let i = 2; i <= numSections; i++) {
-            $(`#section${i}`).hide();
+        // Show section1 and hide other sections initially
+        for (let i = 1; i <= numSections; i++) {
+            if (i === 1) {
+                $(`#section${i}`).show();
+            } else {
+                $(`#section${i}`).hide();
+            }
         }
     } else {
         $('#arrow-link').hide();
@@ -416,6 +425,7 @@ $(document).ready(function() {
     }
 });
 </script>
+
                                               
   </body>
 </html>
