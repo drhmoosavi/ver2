@@ -1,39 +1,42 @@
 /* CSS styles for pagination */
 body {
-    margin: 0;
-    padding: 0;
-    background: transparent;
+  margin: 0;
+  padding: 0;
+  background: transparent;
 }
 
 #wrapper {
-    font-weight: 700;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-}
-
-.icon-header {
-    font-family: 'Bethanya', sans-serif;
-    font-size: 22px;
-    color: #ffffffc5;
-    padding-bottom: 1px;
-    margin-left: 10px;
-    bottom: 10px;
-    left: 10px;
-    z-index: 20;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Change to flex-end */
+  align-items: flex-start; /* Change to flex-start */
+  z-index: 10;
+  position: relative;
+  min-height: 100vh; /* Ensure the wrapper takes up the full viewport height */
+  padding-bottom: 20px; /* Add padding to create space between pagination and word */
 }
 
 #pagination {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-size: 16px;
-    font-weight: 700;
-    margin: 0%;
-    margin-left: -32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  position: absolute; /* Change to absolute */
+  bottom: 0;
+  left: 0;
 }
+
+.icon-header {
+  font-family: 'Bethanya', sans-serif;
+  font-size: 22px;
+  color: #ffffffc5;
+  position: relative; /* Change to relative */
+  padding-bottom: 10px; /* Add padding-bottom to create space between word and pagination */
+}
+
 
 #pagination li {
     display: inline;
@@ -76,9 +79,4 @@ body {
     padding: 1px 7px;
     color: #03051e;
     border: 2px solid whitesmoke;
-}
-
-#pagination-container {
-    bottom: 0;
-    left: 0;
 }
