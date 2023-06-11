@@ -9,9 +9,9 @@ body {
     font-weight: 700;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    z-index: 20;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
 }
 
 .icon-header {
@@ -81,5 +81,4 @@ body {
 #pagination-container {
     bottom: 0;
     left: 0;
-    width: 100%;
 }
