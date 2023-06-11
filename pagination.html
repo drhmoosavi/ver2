@@ -1,0 +1,25 @@
+<div id="wrapper">
+    <div class="icon-header">pages</div>
+    <ul id="pagination"></ul>
+</div>
+
+<script>
+    const numSections = document.querySelectorAll('section[id^="section"]').length;
+    const paginationList = document.getElementById('pagination');
+    for (let i = 1; i <= numSections; i++) {
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = `#section${i}`;
+        link.textContent = i;
+        listItem.appendChild(link);
+        paginationList.appendChild(listItem);
+    }
+
+    if (window.location.pathname === '/index.html') {
+        document.querySelector('#pagination').style.display = 'none';
+    } else {
+        const sectionId = window.location.hash.replace('#', '');
+        const activeLink = document.querySelector(`#pagination a[href="#${sectionId}"]`);
+        activeLink.classList.add('active');
+    }
+</script>
