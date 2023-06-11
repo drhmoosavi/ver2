@@ -8,7 +8,7 @@
   font-style: italic;
   color: white;
   text-transform: capitalize;
-  z-index:100;
+  z-index:10;
 }
 
 .name span {
@@ -54,10 +54,3 @@
   font-style: italic;
   color: white;
 }
-    body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        width: 100%;
-       background:trasnparent
-    }
