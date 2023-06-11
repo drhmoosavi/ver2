@@ -1,4 +1,10 @@
 /* CSS styles for pagination */
+body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
 #wrapper {
     font-weight: 700;
     display: flex;
